@@ -1,4 +1,43 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
 
-createApp(App).mount('#app')
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.min.js";
+
+import { createRouter, createWebHistory } from "vue-router";
+import HomePage from "./views/Home.vue";
+import ErrorPage from "./views/Error.vue";
+import DetailsPage from "./views/Details.vue";
+
+const routes = [
+  {
+    path: "/",
+    component: HomePage,
+  },
+  // {
+  //   path: "/users/update/:id",
+  //   component: updateUser,
+  // },
+  {
+    path: "/games/:id",
+    component: DetailsPage,
+  },
+  // {
+  //   path: "/create",
+  //   component: createUser,
+  // },
+  {
+    path: "/:NotFound(.*)*",
+    component: ErrorPage,
+    meta: {
+      hideHeader: true,
+    },
+  },
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+createApp(App).use(router).mount("#app");
