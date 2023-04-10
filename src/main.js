@@ -9,6 +9,9 @@ import HomePage from "./views/Home.vue";
 import ErrorPage from "./views/Error.vue";
 import DetailsPage from "./views/Details.vue";
 
+import VueSplide from "@splidejs/vue-splide";
+import "@splidejs/vue-splide/css";
+
 const routes = [
   {
     path: "/",
@@ -40,4 +43,4 @@ const router = createRouter({
   routes,
 });
 
-createApp(App).use(router).mount("#app");
+createApp(App).use(router).use(VueSplide).mount("#app");

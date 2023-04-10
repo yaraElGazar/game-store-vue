@@ -1,7 +1,6 @@
 <template>
   <HeaderComponent v-if="!$route.meta.hideHeader" />
   <router-view></router-view>
-  <!-- <div>App Component</div> -->
 </template>
 
 <script>

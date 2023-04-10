@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex  align-items-center justify-content-around" style="border: blue solid 1px;">
+    <div class="d-flex  align-items-center justify-content-around">
         <Logo />
         <Icons />
     </div>
