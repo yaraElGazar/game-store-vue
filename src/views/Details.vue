@@ -1,5 +1,5 @@
 <template>
-    <div class="card mb-3 mx-auto" style="max-width: 900px;">
+    <div class="card mb-3 mx-auto my-5" style="max-width: 900px;">
   <div class="row no-gutters">
     <div class="col-md-12 mx-auto">
       <img :src="thumbnail" class="card-img" alt="game thumnail">

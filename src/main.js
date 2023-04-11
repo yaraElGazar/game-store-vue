@@ -10,6 +10,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "./views/Home.vue";
 import ErrorPage from "./views/Error.vue";
 import DetailsPage from "./views/Details.vue";
+import MostPopularPage from "./views/MostPopularPage.vue";
+import MostRecommendedPage from "./views/MostRecommendedPage.vue";
 
 // Slider
 import VueSplide from "@splidejs/vue-splide";
@@ -23,18 +25,18 @@ const routes = [
     path: "/",
     component: HomePage,
   },
-  // {
-  //   path: "/users/update/:id",
-  //   component: updateUser,
-  // },
   {
     path: "/games/:id",
     component: DetailsPage,
   },
-  // {
-  //   path: "/create",
-  //   component: createUser,
-  // },
+  {
+    path: "/popular",
+    component: MostPopularPage,
+  },
+  {
+    path: "/recommended",
+    component: MostRecommendedPage,
+  },
   {
     path: "/:NotFound(.*)*",
     component: ErrorPage,

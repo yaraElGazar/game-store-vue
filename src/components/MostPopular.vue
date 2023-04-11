@@ -3,10 +3,10 @@
 <div class="row no-gutters p-4">
 <div class="d-flex justify-content-between">
 <h5 class="card-title">Most Popular</h5>
-<div class="see">SEE ALL <svg xmlns="http://www.w3.org/2000/svg" width="7.41" height="12" viewBox="0 0 7.41 12">
+<router-link to="/popular" class="see">SEE ALL <svg xmlns="http://www.w3.org/2000/svg" width="7.41" height="12" viewBox="0 0 7.41 12">
   <path id="Shape" d="M-7.41,1.41-6,0,0,6l-6,6-1.41-1.41L-2.83,6Z" transform="translate(7.41)" fill="#572589"/>
   </svg>
-</div>
+</router-link>
 </div>
 </div>
 <div class="cards d-flex">
@@ -44,4 +44,8 @@ export default {
 color: #572589;
 cursor: pointer;
 }
+a{
+  text-decoration: none;
+}
+
 </style>
