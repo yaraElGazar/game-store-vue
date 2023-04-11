@@ -24,6 +24,7 @@ span {
     border: 1px solid grey;
     padding: 1px 10px;
     border-radius: 20px;
+    height: 30px;
     cursor: pointer;
 }
 span:hover {

@@ -2,17 +2,17 @@
     <div>
         <!-- <CategoryComponent v-for="category in categories" :key="category" :category="category" /> -->
         <Splide :options="{ rewind: true }" aria-label="My Favorite Images">
-    <SplideSlide class="d-flex m-4">
-        <CategoryComponent class="mx-4" @click="genreClicked" v-for="category in categories1" :key="category" :category="category" />
+    <SplideSlide class="d-flex m-4 flex-wrap">
+        <CategoryComponent class="my-2 mx-sm-4 my-sm-1" @click="genreClicked" v-for="category in categories1" :key="category" :category="category" />
     </SplideSlide>
-    <SplideSlide class="d-flex m-4">
-        <CategoryComponent class="mx-4" @click="genreClicked" v-for="category in categories2" :key="category" :category="category" />
+    <SplideSlide class="d-flex m-4 flex-wrap">
+        <CategoryComponent class="my-2 mx-sm-4 my-sm-1" @click="genreClicked" v-for="category in categories2" :key="category" :category="category" />
     </SplideSlide>
-    <SplideSlide class="d-flex m-4">
-        <CategoryComponent class="mx-4" @click="genreClicked" v-for="category in categories3" :key="category" :category="category" />
+    <SplideSlide class="d-flex m-4 flex-wrap">
+        <CategoryComponent class="my-2 mx-sm-4 my-sm-1" @click="genreClicked" v-for="category in categories3" :key="category" :category="category" />
     </SplideSlide>
-    <SplideSlide class="d-flex m-4">
-        <CategoryComponent class="mx-4" @click="genreClicked" v-for="category in categories4" :key="category" :category="category" />
+    <SplideSlide class="d-flex m-4 flex-wrap">
+        <CategoryComponent class="my-2 mx-sm-4 my-sm-1" @click="genreClicked" v-for="category in categories4" :key="category" :category="category" />
     </SplideSlide>
   </Splide>
     </div> 

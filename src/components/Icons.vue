@@ -74,5 +74,6 @@ svg {
     right: 20%;
     background: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 10;
     }
 </style>

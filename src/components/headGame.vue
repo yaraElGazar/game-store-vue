@@ -1,14 +1,16 @@
 <template>
     <div class="card mb-3" style="max-width: 900px;">
-  <div class="row no-gutters">
-    <div class="col-md-8">
-      <img src="https://images.unsplash.com/photo-1680549645205-7330eab343d4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" class="card-img" alt="...">
+  <div class="row no-gutters ">
+    <div class="col-md-7">
+      <img :src="gameStore.randomGame.thumbnail" class="card-img" alt="...">
     </div>
-    <div class="col-md-8">
+    <div class="col-md-4">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <h5 class="card-title">{{ gameStore.randomGame.title }}</h5>
+        <p class="card-text">{{ gameStore.randomGame.genre && gameStore.randomGame.genre.toUpperCase()  }}</p>
+        <p class="card-text">{{ gameStore.randomGame.short_description }}</p>
+        <p class="card-text"><small class="text-muted">Release Date: {{ gameStore.randomGame.release_date }}</small></p>
+        <button @click="onGetDetails(gameStore.randomGame.id)" class="btn btn-primary">MORE INFO</button>
       </div>
     </div>
   </div>
@@ -16,11 +18,49 @@
 </template>
 
 <script>
+import { useGameStore } from '@/stores/GameStore';
+import { onMounted } from 'vue';
+import { useRouter } from 'vue-router'
+
     export default {
-        name: 'HeadGame'
+        name: 'HeadGame',
+        setup () {
+          const gameStore = useGameStore();
+          const router = useRouter();
+
+          onMounted( () => {
+            // fetch random Game
+            gameStore.getRandomGame(); 
+          })
+          
+          function onGetDetails (id) {
+          router.push('/games/' + id);
+        }
+          return {
+            gameStore,
+            onGetDetails
+          }
+        }
     }
 </script>
 
 <style scoped>
-
+button {
+    margin-top: 20px;
+    width: 100%;
+    background: #572589;
+    border: #572589 solid 1px;
+}
+button:hover {
+    margin-top: 20px;
+    width: 100%;
+    background: #633d89;
+    border: #572589 solid 1px;
+}
+button:active {
+    margin-top: 20px;
+    width: 100%;
+    background: #633d89;
+    border: #572589 solid 1px;
+}
 </style>
